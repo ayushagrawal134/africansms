@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version  = '>= 2.3.0'
   spec.files                  = `git ls-files`.split("\n")
 
-
+  spec.add_dependency 'rest-client', '~> 2.1'
   spec.add_development_dependency 'bundler', '~> 2.2.23'
   spec.add_development_dependency 'rake', '~> 13.0'
 end

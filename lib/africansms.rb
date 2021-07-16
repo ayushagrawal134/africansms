@@ -1,4 +1,5 @@
 require 'africansms/configuration'
+require 'africansms/client'
 
 module Africansms
   class AfricansmsError < StandardError; end

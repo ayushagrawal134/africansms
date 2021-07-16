@@ -20,9 +20,45 @@ Or install it yourself as:
 
     $ gem install africansms
 
-## Usage
+### Overview
 
-TODO: Write usage instructions here
+Africansms is an integration of Africastalking SMS service. Before using the gem you should have a knowledge Africastalking SMS service. Documentation URL: https://developers.africastalking.com/docs/sms/overview 
+You have to create an account on AfricasTalking to get the required configration credentials (api_key, username & shortcode).
+
+### Configuration
+
+Add below configuration in initializer
+
+``` ruby
+# config/initializers/africansms.rb
+
+Africansms.configure do |config|
+  config.api_key = 'Africas talking API Key'
+  config.username = 'Africas talking username'
+  config.shortcode = 'Africas talking shortcode'
+end
+```
+### Uses
+
+##### Send message 
+
+Africansms provides an API send message (Africastalking integration) using which you can Send and receive SMS to more than 300 million mobile subscribers across Africa.
+
+.
+
+```ruby
+request_params = {
+  to: 'A comma separated string of recipients’ phone numbers (required)',
+  message: 'The message to be sent. (required)',
+  mode: 'live'
+}
+
+response = Africansms::Client.new(request_params).send_message
+
+```
+Note: By default mode is sandbox. 'live' should be given for live endpoint of Africas talking.
+
+In response you will get a XML response in the case of success & error in the case of Failed.
 
 ## Development
 
