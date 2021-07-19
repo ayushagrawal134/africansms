@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.description            = 'Integration of Africastalking SMS service for sending SMS in African regions'
   spec.homepage               = 'https://github.com/ayushagrawal134/africansms'
   spec.license                = 'MIT'
-  spec.required_ruby_version  = '>= 2.3.0'
+  spec.required_ruby_version  = '>= 2.5.0'
   spec.files                  = `git ls-files`.split("\n")
 
   spec.add_dependency 'rest-client', '~> 2.1'

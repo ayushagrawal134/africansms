@@ -3,7 +3,7 @@ require 'africansms/client'
 
 module Africansms
   class AfricansmsError < StandardError; end
-  
+
   class << self
     def configure
       yield configuration

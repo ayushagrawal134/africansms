@@ -15,7 +15,7 @@ module Africansms
     def username!
       username || raise(AfricansmsError, 'No username specified.')
     end
-    
+
     def shortcode!
       shortcode || raise(AfricansmsError, 'No shortcode specified.')
     end

@@ -10,10 +10,11 @@ module Africansms
 
     def send_message
       raise(AfricansmsError, 'The message to send should not be empty') unless valid_message?
+
       response = RestClient.post(base_url, request_params, request_header)
       response.body
-    rescue StandardError => error
-      error
+    rescue StandardError => e
+      e
     end
 
     private
@@ -21,7 +22,7 @@ module Africansms
     def request_params
       params.merge(
         username: Africansms.configuration.username!,
-        from: Africansms.configuration.shortcode!,
+        from: Africansms.configuration.shortcode!
       )
     end
 
@@ -33,13 +34,15 @@ module Africansms
     end
 
     def base_url
-      params.dig(:mode).eql?('live') ?
-       'https://api.africastalking.com/version1/messaging' :
+      if params[:mode].eql?('live')
+        'https://api.africastalking.com/version1/messaging'
+      else
         'https://api.sandbox.africastalking.com/version1/messaging'
+      end
     end
 
-   def valid_message?
-     params[:message] && !params[:message].empty? 
-   end
+    def valid_message?
+      params[:message] && !params[:message].empty?
+    end
   end
 end
