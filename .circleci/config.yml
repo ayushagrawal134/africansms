@@ -27,8 +27,8 @@ jobs:
           command: bundle install && bundle clean
 
       - run:
-          name: rubocop
-          command: bundle exec rake rubocop
+          name: run rubocop
+          command: bundle exec rubocop
 
   publish_to_rubygems:
     working_directory: ~/repos/africansms
