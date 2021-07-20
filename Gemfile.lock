@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    africansms (0.1.7)
+    africansms (0.1.8)
       rest-client (~> 2.1)
 
 GEM
